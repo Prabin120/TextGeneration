@@ -46,6 +46,7 @@ python manage.py migrate
 python manage.py runserver
 ```
 
+Now your server is running and can be access through **localhost:8000**
 
 ## API endpoints
 
