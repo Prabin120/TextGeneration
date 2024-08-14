@@ -65,3 +65,30 @@ Run the below code in terminal to run all the test cases
 ``` bash
 python manage.py test
 ```
+
+## Work Flow
+
+1. Run the server (run in terminal: **python manage.py runserver**)
+
+2. Open a tool like Postman to hit api
+
+3. Create a user 
+```bash
+method: POST
+
+endpoint: localhost:8000/user/
+
+body: {
+   "name":"User1",
+    "username": "user1",
+    "password": "password",
+    "confirm_password": "password"
+}
+
+response data = {
+   access: 
+   refresh:
+   user:
+}
+```
+**follow the other api endpoints to do other staffs localhost:8000/swagger**
