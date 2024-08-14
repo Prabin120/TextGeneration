@@ -83,7 +83,7 @@ class Login(APIView):
             return Response({"message":"Username and password required"}, status=status.HTTP_400_BAD_REQUEST)
         user = User.objects.filter(username=username).first()
         if not user:
-            return Response({"message": "Username doesn't exists"}, status=status.HTTP_400_BAD_REQUEST)
+            return Response({"message": "Username doesn't exists"}, status=status.HTTP_403_FORBIDDEN)
         if not authenticate(username=username, password=password):
             return Response({"message":"Username or password wrong"}, status=status.HTTP_403_FORBIDDEN)
         serializer = UserSerializer(user)

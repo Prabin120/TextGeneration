@@ -1,4 +1,4 @@
-# Django Project Setup
+# Project Setup
 
 This project is a Django application that includes JWT authentication and endpoints for generating summaries and bullet points.
 
@@ -57,3 +57,11 @@ link: **localhost:8000/swagger**
 
 2. **Redoc docs**
 link: **localhost:8000/redoc**
+
+
+## Checking the test cases
+
+Run the below code in terminal to run all the test cases
+``` bash
+python manage.py test
+```
