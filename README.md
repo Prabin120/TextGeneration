@@ -17,8 +17,8 @@ Before you begin, ensure you have the following installed on your machine:
    First, clone the repository to your local machine:
 
    ```bash
-   git clone https://github.com/yourusername/your-repository.git
-   cd your-repository
+   git clone https://github.com/Prabin120/TextGeneration
+   cd TextGeneration
    ```
 
 2. **Virtual environment**
