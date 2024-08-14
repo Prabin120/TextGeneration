@@ -12,9 +12,20 @@ from user.models import User
 # Create your views here.
 
 class GenerateSummary(APIView):
+    """
+    API endpoint to get summary from the given text.
+    
+    """
     permission_classes = [IsAuthenticated]
 
     def post(self, request):
+        """
+        **Get the summary from a given text**
+
+        **Permissions**: Only authenticated user.
+
+        **Required fields**: `text`
+        """
         user_input = request.data.get('text')
         if not user_input:
             return JsonResponse({"message":"Input text required"}, status=status.HTTP_400_BAD_REQUEST)
@@ -29,9 +40,20 @@ class GenerateSummary(APIView):
         return Response(serializer.data, status=status.HTTP_200_OK)
 
 class GenerateBulletPoints(APIView):
+    """
+    API endpoint to get bullet points from the given text.
+    
+    """
     permission_classes = [IsAuthenticated]
 
     def post(self, request):
+        """
+        **Get the bullet points from a given text**
+
+        **Permissions**: Only authenticated user.
+
+        **Required fields**: `text`
+        """
         user_input = request.data.get('text')
         if not user_input:
             return JsonResponse({"message":"Input text required"}, status=status.HTTP_400_BAD_REQUEST)

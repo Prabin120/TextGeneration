@@ -9,7 +9,16 @@ from rest_framework.permissions import AllowAny, IsAuthenticated
 
 # Create your views here.
 class UserView(APIView):
+    """
+    API endpoint for user registration and retrieval.
+    
+    * **post**: Register a new user.
+    * **get**: Retrieve the authenticated user's information.
+    """
     def get_permissions(self):
+        """
+        Set different permissions for GET and POST requests.
+        """
         if self.request.method == 'POST':
             return [AllowAny()]
         if self.request.method == 'GET':
@@ -17,6 +26,11 @@ class UserView(APIView):
         return super().get_permissions()
 
     def get(self,request):
+        """
+        Retrieve the authenticated user's information.
+
+        **Permissions**: Authenticated users only.
+        """
         username = request.user
         try:
             user = User.objects.get(username = username)
@@ -26,6 +40,15 @@ class UserView(APIView):
         return Response(serializer.data, status=status.HTTP_200_OK)
     
     def post(self,request):
+        """
+        Register a new user.
+
+        **Permissions**: Open to all users.
+
+        **Required fields**: `username`, `password`, `confirm_password`
+
+        **Optional fields**: `name`
+        """
         username = request.data.get('username')
         name = request.data.get('name','')
         password = request.data.get('password')
