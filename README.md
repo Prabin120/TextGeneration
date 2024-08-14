@@ -59,7 +59,7 @@ link: **localhost:8000/swagger**
 link: **localhost:8000/redoc**
 
 
-## Checking the test cases
+## Testing the APIs
 
 Run the below code in terminal to run all the test cases
 ``` bash
